@@ -12,11 +12,11 @@ class Solution {
                    slope=Math.atan2((points[j][1]-points[i][1]),(points[j][0]-points[i][0]));
 
             hm.put(slope,hm.getOrDefault(slope,1)+1);
-            //max=Math.max(max,hm.get(slope));       
+            max=Math.max(max,hm.get(slope));       
                 }
                 }
-                for(int val:hm.values())
-                max=Math.max(max,val);
+                // for(int val:hm.values())
+                // max=Math.max(max,val);
         }
         return max;
     }
