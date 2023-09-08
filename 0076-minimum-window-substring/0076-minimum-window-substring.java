@@ -17,32 +17,35 @@ class Solution {
 
       // s = "ADOBECODEBANC", t = "ABC"
 
-      while (j <n) {
-            char ch_j = s.charAt(j);
-            if (hm.containsKey(ch_j)) {
-                if (hm.get(ch_j) > 0)
-                    count--;
-                hm.put(ch_j, hm.get(ch_j) - 1);
-            }
+     while(j<n){
+         char ch1=s.charAt(j);
+         if(hm.containsKey(ch1)){
+             if(hm.get(ch1)>0)
+             count--;
 
-            while (count == 0) { // try to shrink the window
-                if (minwindow > j - i + 1) {
-                    minwindow = j - i + 1;
-                    minstart = i;
-                }
+            hm.put(ch1,hm.get(ch1)-1);
+             
+         }
+         // Will shrink the window now
+         while(count==0){
+            if(minwindow>j-i+1){
+             minwindow=j-i+1;
+             minstart=i;
+             }
 
-                char ch_i = s.charAt(i);
-                if (hm.containsKey(ch_i)) {
-                    hm.put(ch_i, hm.get(ch_i) + 1);
-                    if (hm.get(ch_i) > 0)
-                        count++;
+             char ch2=s.charAt(i);
+             if(hm.containsKey(ch2)){
+                 hm.put(ch2,hm.get(ch2)+1);
+
+                 if(hm.get(ch2)>0)
+                 count++;
                 }
-                i++;
-            }
-            j++; // Don't ever forget this :-)
-        }
-        return minwindow == Integer.MAX_VALUE ? "" : s.substring(minstart, minstart + minwindow);
-     
+             i++;
+         }
+         j++;
+     }
+     return minwindow == Integer.MAX_VALUE ? "" : s.substring(minstart, minstart + minwindow);
+   
         }
        
 }
