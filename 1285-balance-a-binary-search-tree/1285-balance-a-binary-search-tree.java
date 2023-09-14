@@ -15,9 +15,11 @@
  */
 class Solution {
     public TreeNode balanceBST(TreeNode root) {
-    
-    List<Integer> list1=InOrderTraversal(root);
-    return createBST(list1,0,list1.size()-1);
+        if(root==null)
+        return null;
+    List<Integer> list=new ArrayList<>();
+    InOrderTraversal(root,list);
+    return createBST(list,0,list.size()-1);
 
     }
   public TreeNode createBST(List<Integer> in,int low,int high)
@@ -31,16 +33,14 @@ class Solution {
         return root;
     }
 
-    List<Integer> InOrderTraversal(TreeNode root){
+    void InOrderTraversal(TreeNode root,List<Integer> list){
       
-      List<Integer> list=new ArrayList<>();
       if(root==null)
-      return list;
+      return;
 
-      list.addAll(InOrderTraversal(root.left));
+      InOrderTraversal(root.left,list);
       list.add(root.val);
-      list.addAll(InOrderTraversal(root.right));
+      InOrderTraversal(root.right,list);
 
-       return list;
     }
 }
