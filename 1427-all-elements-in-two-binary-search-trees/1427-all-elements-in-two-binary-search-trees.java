@@ -14,62 +14,28 @@
  * }
  */
 class Solution {
-    List<Integer> list=new ArrayList<>();
     public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
-        getInorder(root1);
-        getInorder(root2);
-        return list;
-    }
-
-    void getInorder(TreeNode root){
-        if(root==null)
-        return;
-     
-     getInorder(root.left);
-     list.add(root.val);
-     getInorder(root.right);
-     
-    Collections.sort(list); 
-    //  int end=list.size()-1;
-    //  Divide(0,end);
-
-    }
-    
-//     // Dividing th array
-//     public void Divide(int top,int bottom) {
-//       int mid=top+(bottom-top)/2;
-//         if(top>=bottom)
-//         return;
-
-//         Divide(top,mid);
-//         Divide(mid+1,bottom);
-
-//         Conquer(top,mid,bottom);
-//     }
-
-// // adding elments to array in sorted order
-// public void Conquer(int top,int mid, int bottom){
-//  int[] merge=new int[bottom-top+1];
-//  int idx1=top,idx2=mid+1,x=0;
-
-//  while(idx1<=mid && idx2<=bottom){
-//      if(nums[idx1]<=nums[idx2])
-//      merge[x++]=nums[idx1++];
-//      else
-//      merge[x++]=nums[idx2++];
-//  }
-
-//  while(idx1<=mid ){
-//  merge[x++]=nums[idx1++];
-//  }
-
-//  while(idx2<=bottom){
-//    merge[x++]=nums[idx2++];  
-//  }
-
-//  for(int i=0,j=top;i<merge.length;i++,top++){
-//      nums[top]=merge[i];
-//  }
-// }
-
+   Stack<TreeNode> S1 = new Stack(), S2 = new Stack();
+        List<Integer> result = new ArrayList();
+        while(root1 != null || root2 != null || !S1.empty() || !S2.empty()){
+            while(root1 != null){
+                S1.push(root1);
+                root1 = root1.left;
+            }
+            while(root2 != null){
+                S2.push(root2);
+                root2 = root2.left;
+            }
+            if(S2.empty() || (!S1.empty() && S1.peek().val <= S2.peek().val)){
+                root1 = S1.pop();
+                result.add(root1.val);
+                root1 = root1.right;
+            } else {
+                root2 = S2.pop();
+                result.add(root2.val);
+                root2 = root2.right;
+            }
+        }
+        return result;
+}
 }
