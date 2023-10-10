@@ -10,8 +10,7 @@ class Solution {
             pq.add(pq.poll()*-1);
         }
         while(!pq.isEmpty()){
-            sum=sum+pq.peek();
-            pq.poll();
+            sum=sum+pq.poll();
         }
         return sum;
     }
