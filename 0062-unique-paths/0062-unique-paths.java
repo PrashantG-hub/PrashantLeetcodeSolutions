@@ -25,7 +25,6 @@ int ans1=FinduniquePaths(dp,m-1,n);
 int ans2=FinduniquePaths(dp,m,n-1);
 dp[m][n]=ans1+ans2;
  
-return dp[m][n];
+return ans1+ans2;
 }
-
 }
