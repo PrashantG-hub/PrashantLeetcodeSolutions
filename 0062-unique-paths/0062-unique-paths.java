@@ -13,18 +13,14 @@ class Solution {
         //     return (int)res;
 
    int dp[][]=new int[m][n];
-     return FinduniquePaths(dp,m-1,n-1);
+     return FinduniquePaths(0,0,dp,m,n);
     }
 
-public int FinduniquePaths(int dp[][],int m, int n) {
+public int FinduniquePaths(int i,int j,int dp[][],int m, int n) {
 
-if(m==0 || n==0)  return 1;
-if(m<0 || n<0)   return 0;
-if(dp[m][n]!=0)  return dp[m][n];
-int ans1=FinduniquePaths(dp,m-1,n);
-int ans2=FinduniquePaths(dp,m,n-1);
-dp[m][n]=ans1+ans2;
- 
-return ans1+ans2;
+if(m==i || n==j)  return 0;
+if(i == m-1 && j == n-1)return dp[i][j] = 1;
+        if(dp[i][j] != 0)return dp[i][j];
+        return dp[i][j] = FinduniquePaths(i+1,j,dp,m,n) + FinduniquePaths(i,j+1,dp,m,n);
 }
 }
