@@ -28,7 +28,6 @@ class Solution {
      result= root.val;
      return;
     }
-   
     FindInoder(root.right,k);
     }
 }
