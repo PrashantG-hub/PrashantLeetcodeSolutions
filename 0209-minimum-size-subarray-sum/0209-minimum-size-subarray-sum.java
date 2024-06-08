@@ -3,17 +3,18 @@ class Solution {
         if (nums == null || nums.length == 0)
     return 0;
   
-  int i = 0, j = 0, sum = 0, min = Integer.MAX_VALUE;
- 
-  while (j < nums.length) {
-    sum += nums[j++];
-    
-    while (sum >= target) {
-      min = Math.min(min, j - i);    
-      sum -= nums[i++];   
-    }
+  int j = 0, sum = 0, min = Integer.MAX_VALUE;
+
+  for(int i=0;i<nums.length;i++){
+   sum+=nums[i];
+
+   while(sum>=target){
+    min=Math.min(min,i-j+1);
+    sum-=nums[j++];
+   }
   }
-  
-  return min == Integer.MAX_VALUE ? 0 : min;
+  return min==Integer.MAX_VALUE?0 : min ;
+ 
+
     }
 }
