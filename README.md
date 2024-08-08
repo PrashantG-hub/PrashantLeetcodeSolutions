@@ -29,3 +29,10 @@
 |  |
 | ------- |
 | [0209-minimum-size-subarray-sum](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0209-minimum-size-subarray-sum) |
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Math
+|  |
+| ------- |
+| [0009-palindrome-number](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0009-palindrome-number) |
+<!---LeetCode Topics End-->
