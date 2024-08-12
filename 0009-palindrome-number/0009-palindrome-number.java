@@ -1,18 +1,16 @@
 class Solution {
     public boolean isPalindrome(int x) {
-       int s=0, d,u=0;
-       u=x;
-       while(x>0){              // 12  3  2  1
-        d=x%10;
-        s=s*10+d;
-        x=x/10;         // 123
-       }
-       if(s==u)
-       return true;
-       return false;
+        int s=0,d,u=0;
+        u=x;
+        while(x>0){            //   12321
+            d=x%10;                    //  1
+            s=s*10+d;
+            x=x/10;       //   1232
+        }
+        if(s==u)
+        return true;
+        return false;
        }
     }
-
-
    //0x10+1=1, 1x10+2=12), 12x10+3=123
   //   123x10+2=1232, 1232x10+1=12321
