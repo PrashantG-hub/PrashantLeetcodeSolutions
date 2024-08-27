@@ -35,24 +35,18 @@ class Sorting
 }
 // } Driver Code Ends
 
-
 class Solution
 {
-  static void insert(int arr[],int i)
-  {
-       // Your code here
-  }
-  //Function to sort the array using insertion sort algorithm.
   public void insertionSort(int arr[], int n)
   {
-     for(int i=0;i<n;i++){
-         int curr=arr[i];
-         int j=i-1;
-         while(j>=0 && curr<arr[j]){
-             arr[j+1]=arr[j];
-             j--;
-         }
-         arr[j+1]=curr;
-     }
+   for(int i=0;i<n;i++){
+       int curr=arr[i];
+       int j=i-1;
+       while(j>=0 && curr<arr[j]){
+           arr[j+1]=arr[j];
+           j--;
+       }
+       arr[j+1]=curr;
+   }
   }
 }
