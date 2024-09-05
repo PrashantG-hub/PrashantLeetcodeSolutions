@@ -1,9 +1,9 @@
 class Solution {
     public int[] sortArray(int[] arr) {
-      mergeSort(arr,0,arr.length-1);
-      return arr;
-        
-	}
+        mergeSort(arr, 0, arr.length - 1);
+        return arr;
+
+    }
 
     private static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
@@ -29,7 +29,10 @@ class Solution {
         int[] rightArray = new int[n2];
 
         // Copy data to temporary arrays
-        System.arraycopy(arr, left, leftArray, 0, n1);
+        
+        for(int i=0;i<n1;i++)
+        leftArray[i]=arr[left+i];
+        //System.arraycopy(arr, left, leftArray, 0, n1);
         System.arraycopy(arr, middle + 1, rightArray, 0, n2);
 
         // Initial indexes of subarrays
@@ -63,4 +66,4 @@ class Solution {
         }
     }
 
-    }
+}
