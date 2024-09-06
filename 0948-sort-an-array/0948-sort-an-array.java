@@ -20,9 +20,14 @@ class Solution {
 
         int[] leftarray=new int[n1];
         int[] rightarray=new int[n2];
+        
+        for(int i=0;i<n1;i++)
+        leftarray[i]=arr[left+i];
+        //System.arraycopy(arr,left,leftarray,0,n1);
 
-        System.arraycopy(arr,left,leftarray,0,n1);
-        System.arraycopy(arr,middle+1,rightarray,0,n2);
+        for(int j=0;j<n2;j++)
+        rightarray[j]=arr[middle+1+j];
+        //System.arraycopy(arr,middle+1,rightarray,0,n2);
 
         int i=0,j=0;
         int k=left;
