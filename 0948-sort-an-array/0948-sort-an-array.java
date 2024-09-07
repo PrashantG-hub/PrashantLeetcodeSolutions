@@ -12,24 +12,24 @@ class Solution {
         }
     }
     
-    public int partition(int[] nums, int low, int high){
-        int pivot=nums[low];
-        while(low<=high){
-            while(nums[low]<pivot)
-                low++;
+    public int partition(int[] nums, int i, int j){
+        int pivot=nums[i];
+        while(i<=j){
+            while(nums[i]<pivot)
+                i++;
                 
-            while(nums[high]>pivot)
-                high--;
+            while(nums[j]>pivot)
+                j--;
 
-            if(low<=high){
-                int temp = nums[low];
-                nums[low] = nums[high];
-                nums[high] = temp;
-                low++;
-                high--;
+            if(i<=j){
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
+                j--;
             }
         }
-        return low;
+        return i;
     }
 
 }
