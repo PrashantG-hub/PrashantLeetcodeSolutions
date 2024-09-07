@@ -1,63 +1,34 @@
 class Solution {
-
-    // MERGE SORT ALGORITHM -----------------------------------------------------------
+    public int[] sortArray(int[] nums) {
+        quicksort(nums, 0,nums.length-1);
+        return nums;
+    }
     
-    public int[] sortArray(int[] arr) {
-        
-        mergeSort(arr,0,arr.length-1);
-        return arr;
-    }
-
-    private static void mergeSort(int[] arr,int left,int right){
-        if(left<right){
-            int middle=left+(right-left)/2;
-            mergeSort(arr,left,middle);
-            mergeSort(arr,middle+1,right);
-
-            merge(arr,left,middle,right);
+    public void quicksort(int[] nums, int low, int high){
+        if(low<high){
+          int pivot = nums[(low+high)/2];
+          int index = partition(nums,low,high,pivot);
+          quicksort(nums,low,index-1);
+          quicksort(nums,index,high);
         }
     }
-
-   private static void merge(int[] arr, int left, int middle, int right){
-        int n1=middle+1-left;
-        int n2=right-middle;
-
-        int[] leftarray=new int[n1];
-        int[] rightarray=new int[n2];
-        
-        for(int i=0;i<n1;i++)
-        leftarray[i]=arr[left+i];
-        //System.arraycopy(arr,left,leftarray,0,n1);
-
-        for(int j=0;j<n2;j++)
-        rightarray[j]=arr[middle+1+j];
-        //System.arraycopy(arr,middle+1,rightarray,0,n2);
-
-        int i=0,j=0;
-        int k=left;
-
-        while(i<n1 && j<n2){
-            if(leftarray[i]<=rightarray[j]){
-                arr[k]=leftarray[i];
-                i++;
+    
+    public int partition(int[] nums, int low, int high, int pivot){
+        while(low<=high){
+            while(nums[low]<pivot)
+                low++;
+            while(nums[high]>pivot)
+                high--;
+            if(low<=high){
+                int temp = nums[low];
+                nums[low] = nums[high];
+                nums[high] = temp;
+                low++;
+                high--;
             }
-            else{
-                arr[k]=rightarray[j];
-                j++;
-            }
-            k++;
         }
-
-        while(i<n1){
-            arr[k]=leftarray[i];
-            i++;
-            k++;
-        }
-
-        while(j<n2){
-            arr[k]=rightarray[j];
-            j++;
-            k++;
-        }
+        return low;
     }
+
 }
+
