@@ -17,8 +17,10 @@ class Solution {
         while(low<=high){
             while(nums[low]<pivot)
                 low++;
+                
             while(nums[high]>pivot)
                 high--;
+
             if(low<=high){
                 int temp = nums[low];
                 nums[low] = nums[high];
