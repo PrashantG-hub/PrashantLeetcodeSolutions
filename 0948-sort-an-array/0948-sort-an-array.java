@@ -6,14 +6,14 @@ class Solution {
     
     public void quicksort(int[] nums, int low, int high){
         if(low<high){
-          int pivot = nums[(low+high)/2];
-          int index = partition(nums,low,high,pivot);
+          int index = partition(nums,low,high);
           quicksort(nums,low,index-1);
           quicksort(nums,index,high);
         }
     }
     
-    public int partition(int[] nums, int low, int high, int pivot){
+    public int partition(int[] nums, int low, int high){
+        int pivot=nums[low];
         while(low<=high){
             while(nums[low]<pivot)
                 low++;
