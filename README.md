@@ -38,6 +38,7 @@
 ## Array
 |  |
 | ------- |
+| [0792-binary-search](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0792-binary-search) |
 | [0948-sort-an-array](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0948-sort-an-array) |
 ## Divide and Conquer
 |  |
@@ -67,4 +68,8 @@
 |  |
 | ------- |
 | [0948-sort-an-array](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0948-sort-an-array) |
+## Binary Search
+|  |
+| ------- |
+| [0792-binary-search](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0792-binary-search) |
 <!---LeetCode Topics End-->
