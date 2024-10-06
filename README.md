@@ -40,6 +40,7 @@
 | ------- |
 | [0792-binary-search](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0792-binary-search) |
 | [0948-sort-an-array](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/0948-sort-an-array) |
+| [1878-check-if-array-is-sorted-and-rotated](https://github.com/PrashantG-hub/PrashantLeetcodeSolutions/tree/master/1878-check-if-array-is-sorted-and-rotated) |
 ## Divide and Conquer
 |  |
 | ------- |
